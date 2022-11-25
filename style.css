@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+.wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.wrapper > * {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.header{
+    height: 120px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.anim h1{
+    color: #111;
+    padding: 0;
+    margin: 0;
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+.anim h1 span{
+    display: table-cell;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: animate 2s linear infinite;
+    -webkit-animation: animate 2s linear infinite;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////
+*/
+
+.anim h1 span:nth-child(1){
+    animation-delay: 0s;
+}
+.anim h1 span:nth-child(2){
+    animation-delay: 0.25s;
+}
+.anim h1 span:nth-child(3){
+    animation-delay: 0.5s;
+}
+.anim h1 span:nth-child(4){
+    animation-delay: 0.75s;
+}
+.anim h1 span:nth-child(5){
+    animation-delay: 1s;
+}
+.anim h1 span:nth-child(6){
+    animation-delay: 1.25s;
+}
+.anim h1 span:nth-child(7){
+    animation-delay: 1.5s;
+}
+.anim h1 span:nth-child(8){
+    animation-delay: 1.75s;
+}
+@keyframes animate{
+    0%,100%{
+        color: rgb(18, 221, 11);
+        filter: blur(2px);
+        -webkit-filter:2px;
+        text-shadow: 0 0 10px #06eb12,
+                    0 0 20px #00ff22,
+                    0 0 40px #00ff40,
+                    0 0 80px #00ff62,
+                    0 0 120px #00ff00,
+                    0 0 200px #00ff22,
+                    0 0 300px #31ca0b,
+                    0 0 400px #15ff00;
+    }
+
+    5%,95%{
+       color: #111;
+       filter: blur(0px);
+       -webkit-filter: blur(0px);
+       text-shadow: none;
+                
+    }
+}
+
+
+/*
+///////////////////////////////////////////////////////////////////////
+*/
+.footer{
+    height: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgb(10, 7, 14);
+    color: #00ff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    text-align: center;
+    justify-content: center;
+    background: #111;
+    height: auto;
+    font-size: 20px;
+}
+.main p{
+    padding: 5px;
+    color: rgb(11, 221, 29);
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-variant: small-caps;
+   font-kerning: initial;
+
+}
+/*
+//////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+.aside1{
+    background: #000;
+
+}
+#anim{
+    display: grid;
+    place-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+#anim h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #19d109;
+    text-shadow: 0 0 0 transparent,                  0 0 10px #07d307,                 0 0 20px rgba(76, 179, 8, 0.842),                  0 0 40px #12d300,                  0 0 100px #00ff00,                  0 0 200px #00ff22,                    0 0 300px #09ff00,                  0 0 500px #5eff00,                    0 0 1000px #00ff22;
+    animation: animates 1s linear alternate;
+    -webkit-animation: animates 1s linear alternate;
+}
+
+@keyframes animates {
+          0%{
+            opacity: 2;
+          }
+          40%{
+            opacity: 1;
+          }
+          42%{
+            opacity: 0.8;
+          }
+          43%{
+            opacity: 1;
+          }
+          45%{
+            opacity:1 ;
+          }
+          46%{
+            opacity: 0.3;
+          }
+        }
+/*
+//////////////////////////////////////////////////////////////////////////////////////////////
+*/
+.aside2{
+    background: rgb(0, 0, 0);
+    color: #07d307;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+/* responsive part */
+
+@media all and (min-width: 800px){
+    .main{
+        flex: 3;
+    }
+
+    .aside1{
+        order: 1;
+    }
+    .aside2{
+        order: 2;
+        
+    }
+
+    .main{
+        order: 2;
+    }
+    
+    .footer{
+        order: 4;
+    }
+}
+
+@media all and (min-width: 600px){
+
+    .aside{
+        flex: 1;
+    }
+
+}
